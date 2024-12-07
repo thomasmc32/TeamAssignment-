@@ -3,7 +3,7 @@ import java.util.BitSet;
 import java.util.Scanner;
 
 public class DES {
-
+    //Member 1
     // Initial Permutation (IP) Table
     private static final int[] IP = {58, 50, 42, 34, 26, 18, 10, 2,
             60, 52, 44, 36, 28, 20, 12, 4,
