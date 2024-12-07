@@ -1,3 +1,4 @@
+//https://en.wikipedia.org/wiki/DES_supplementary_material
 import java.util.BitSet;
 import java.util.Scanner;
 
