@@ -59,7 +59,7 @@ public class BruteForceDecrypt {
         }
 
         // Maximum key length to test
-        int maxKeyLength = 2; // Adjust as needed
+        int maxKeyLength = 8; // Adjust as needed
         System.out.println("Brute-forcing with keys up to length " + maxKeyLength + "...");
 
         // Perform brute force
