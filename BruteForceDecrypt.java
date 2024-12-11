@@ -24,19 +24,21 @@ public class BruteForceDecrypt {
         return dictionary;
     }
 //ayoub end
-    //Bhav start
-    // Count valid words in a decrypted text
-    public static int countValidWords(String text, Set<String> dictionary) {
-        String[] words = text.split("\\W+"); // Split by non-word characters
-        int validWordCount = 0;
 
-        for (String word : words) {
-            if (dictionary.contains(word.toLowerCase())) {
-                validWordCount++;
-            }
+//Bhav start
+// Count valid words in a decrypted text
+public static int countValidWords(String text, Set<String> dictionary) {
+    String[] words = text.split("\\W+"); // Split by non-word characters
+    int validWordCount = 0;
+
+    for (String word : words) {
+        if (dictionary.contains(word.toLowerCase())) {
+            validWordCount++;
         }
-        return validWordCount;
     }
+    return validWordCount;
+}
+
 //Bhav end
     //aayudh start
     public static void main(String[] args) {
