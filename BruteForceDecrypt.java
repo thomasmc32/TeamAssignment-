@@ -9,7 +9,7 @@ public class BruteForceDecrypt {
     // Define the alphabet
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private static int totalKeysTested = 0; // Track the number of keys tested
-
+    //ayoub start
     // Load dictionary from file into a set
     public static Set<String> loadDictionary(String dictionaryFile) {
         Set<String> dictionary = new HashSet<>();
@@ -23,7 +23,8 @@ public class BruteForceDecrypt {
         }
         return dictionary;
     }
-
+//ayoub end
+    //Bhav start
     // Count valid words in a decrypted text
     public static int countValidWords(String text, Set<String> dictionary) {
         String[] words = text.split("\\W+"); // Split by non-word characters
@@ -36,7 +37,8 @@ public class BruteForceDecrypt {
         }
         return validWordCount;
     }
-
+//Bhav end
+    //aayudh start
     public static void main(String[] args) {
         String cipherFile = "ciphertext.txt"; // File containing the ciphertext
         String dictionaryFile = "dictionary.txt"; // File containing the dictionary
@@ -70,7 +72,8 @@ public class BruteForceDecrypt {
         // Print total keys tested
         System.out.println("Total keys tested: " + totalKeysTested);
     }
-
+//aayudh end
+    //Thomas start
     // Recursive method to generate keys and test decryption
     private static void bruteForce(String currentKey, int maxLength, String ciphertext, Set<String> dictionary) {
         if (currentKey.length() == maxLength) {
@@ -96,7 +99,8 @@ public class BruteForceDecrypt {
             bruteForce(currentKey + c, maxLength, ciphertext, dictionary);
         }
     }
-
+//thomas end
+    //aidan start
     // Decrypt the ciphertext using the given key
     private static String decrypt(String ciphertext, String key) {
         StringBuilder decrypted = new StringBuilder();
@@ -116,3 +120,4 @@ public class BruteForceDecrypt {
         return decrypted.toString();
     }
 }
+//aidan end
