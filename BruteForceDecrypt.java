@@ -6,8 +6,8 @@
  * Date Developed: 12/ /24
  * Last Date Changed:12/12/24
  * Citations:
- *
- *
+ * https://github.com/joeoakes/javaBruteForceAllChars
+ * https://github.com/joeoakes/javaBruteForceDictionary/
  *
  */
 import java.io.BufferedReader;
@@ -86,11 +86,11 @@ public static int countValidWords(String text, Set<String> dictionary) {
         // Print total keys tested
         System.out.println("Total keys tested: " + totalKeysTested);
     }
-//aayudh end
+// end
     //Thomas
     /**
-     * Tries to break the encrypted text (ciphertext) by testing all possible keys
-     * up to a certain length. It checks if the decrypted text makes sense using a dictionary.
+     * Tries to break the ciphertext by testing all possible keys up to a certain length.
+     * It also checks if the decrypted text makes sense using a dictionary.
      *
      * @param currentKey   The key being built. Start with an empty string ("").
      * @param maxLength    The maximum length the key can be.
