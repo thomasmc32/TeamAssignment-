@@ -36,22 +36,33 @@ public class BruteForceDecrypt {
         return dictionary;
     }
 //ayoub end
+// Bhav start
+// Function: Count valid words in a given text
+// Output:
+//   - Returns the number of valid words found in the text.
 
-//Bhav start
-// Count valid words in a decrypted text
-public static int countValidWords(String text, Set<String> dictionary) {
-    String[] words = text.split("\\W+"); // Split by non-word characters
-    int validWordCount = 0;
+    public static int countValidWords(String text, Set<String> dictionary) {
+        // Split the text into words wherever there are non-letter characters (like spaces or punctuation).
+        // For example: "Hello, World!" becomes ["Hello", "World"]
+        String[] words = text.split("\\W+");
 
-    for (String word : words) {
-        if (dictionary.contains(word.toLowerCase())) {
-            validWordCount++;
+        // Start a counter to keep track of how many valid words we find.
+        int validWordCount = 0;
+
+        // Go through each word from the text.
+        for (String word : words) {
+            // Convert the word to lowercase and check if it is in the dictionary of valid words.
+            if (dictionary.contains(word.toLowerCase())) {
+                // If the word is valid, increase the counter by 1.
+                validWordCount++;
+            }
         }
-    }
-    return validWordCount;
-}
 
-//Bhav end
+        // Return the total number of valid words found.
+        return validWordCount;
+    }
+// Bhav end
+
     //aayudh start
     public static void main(String[] args) {
         String cipherFile = "ciphertext.txt"; // File containing the ciphertext
