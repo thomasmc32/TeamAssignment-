@@ -18,6 +18,13 @@ import java.io.IOException; // To handle input/output exceptions
 import java.util.HashSet; // For storing unique dictionary words
 import java.util.Set; // To define a collection of unique elements
 
+/**
+ * A utility class for decrypting ciphertext using brute-force methods.
+ * This class prepares inputs, loads a dictionary for validation, and tests all possible keys up to a specified length.
+ *
+ //* @param dictionaryFile The file path to a dictionary containing valid words (one word per line).
+ */
+
 public class BruteForceDecrypt {
 
     // prepares the inputs and starts the brute-force operation by loading dictionary into Hashset
@@ -29,6 +36,14 @@ public class BruteForceDecrypt {
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     // Track the number of keys tested during brute force decryption
     private static int totalKeysTested = 0;
+
+    /**
+     * Loads a dictionary of valid words from a specified file into a HashSet for fast lookups.
+     *
+     * @param dictionaryFile The file path to a dictionary containing valid words (one word per line).
+     * @return A Set of unique dictionary words, all converted to lowercase for consistency.
+     */
+
     // Load dictionary from file into a set
     public static Set<String> loadDictionary(String dictionaryFile) {
         Set<String> dictionary = new HashSet<>();
