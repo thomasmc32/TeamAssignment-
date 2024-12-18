@@ -10,32 +10,43 @@
  * https://github.com/joeoakes/javaBruteForceDictionary/
  *
  */
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+
+// Ayoub start
+import java.io.BufferedReader; // For efficient reading of text files
+import java.io.FileReader; // To read character files
+import java.io.IOException; // To handle input/output exceptions
+import java.util.HashSet; // For storing unique dictionary words
+import java.util.Set; // To define a collection of unique elements
 
 public class BruteForceDecrypt {
 
+    // prepares the inputs and starts the brute-force operation by loading dictionary into Hashset
+    // used for quick lookups and reads the ciphertext from a file into a string
+    // It sets a maximum key length for brute force and initiates the decryption process
+    // tests all possible keys within the specified length
+
     // Define the alphabet
     private static final char[] ALPHABET = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-    private static int totalKeysTested = 0; // Track the number of keys tested
-    //ayoub start
+    // Track the number of keys tested during brute force decryption
+    private static int totalKeysTested = 0;
     // Load dictionary from file into a set
     public static Set<String> loadDictionary(String dictionaryFile) {
         Set<String> dictionary = new HashSet<>();
+        // Open the file and set up efficient reading
         try (BufferedReader br = new BufferedReader(new FileReader(dictionaryFile))) {
             String word;
+            // Read each line (word) from the file until the end
             while ((word = br.readLine()) != null) {
                 dictionary.add(word.toLowerCase());
             }
         } catch (IOException e) {
+            // Print an error message if something goes wrong while reading the file
             System.err.println("Error reading the dictionary file: " + e.getMessage());
         }
+        // Return the HashSet containing all the loaded dictionary words
         return dictionary;
     }
-//ayoub end
+    //Ayoub end
 // Bhav start
 // Function: Count valid words in a given text
 // Output:
