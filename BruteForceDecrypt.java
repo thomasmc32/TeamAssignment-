@@ -165,7 +165,20 @@ public class BruteForceDecrypt {
         }
     }
     //Thomas
-    //aidan start
+    //Aidan
+
+    /**
+     * Decrypts the DES ciphertext when a key is used to find a valid word from the dictionary.
+     * Shifts each key letter by letter.
+     * It then returns it as a string
+     *
+     *
+     * @param ciphertext  Ciphertext from the DES encryption
+     * @param key Alphabetical letter by letter key used for trying to crack encryption
+     * @return
+     */
+
+
     // Decrypt the ciphertext using the given key
     private static String decrypt(String ciphertext, String key) {
         StringBuilder decrypted = new StringBuilder();
