@@ -63,10 +63,14 @@ public class BruteForceDecrypt {
     }
     //Ayoub end
 // Bhav start
-// Function: Count valid words in a given text
-// Output:
-//   - Returns the number of valid words found in the text.
-
+    /**
+     * Counts the number of valid words in the decrypted text.
+     * It splits the text into words and checks each word against a dictionary to see if it's valid.
+     *
+     * @param text        The decrypted text that needs to be validated.
+     * @param dictionary  A set of valid words to compare the text against.
+     * @return            The number of valid words found in the text.
+     */
     public static int countValidWords(String text, Set<String> dictionary) {
         // Split the text into words wherever there are non-letter characters (like spaces or punctuation).
         // For example: "Hello, World!" becomes ["Hello", "World"]
