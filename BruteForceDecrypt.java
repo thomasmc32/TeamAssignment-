@@ -133,42 +133,43 @@ public class BruteForceDecrypt {
      * Tries to break the ciphertext by testing all possible keys up to a certain length.
      * It also checks if the decrypted text makes sense using a dictionary.
      *
-     * @param currentKey   The key being built. Start with an empty string ("").
-     * @param maxLength    The maximum length the key can be.
-     * @param ciphertext   The encrypted message that needs to be unlocked.
-     * @param dictionary   A list of valid words to check if the decrypted text is correct.
+     * @param currentKey The key being built. Start with an empty string
+     * @param maxLength The maximum length the key can be.
+     * @param ciphertext The encrypted message that needs to be unlocked.
+     * @param dictionary A list of valid words to check if the decrypted text is correct.
      */
     private static void bruteForce(String currentKey, int maxLength, String ciphertext, Set<String> dictionary) {
-        // Base case: if the key is as long as it should be, test it
-        if (currentKey.length() == maxLength) {
-            totalKeysTested++; // Increment the count of tested keys
+        // loop through all lengths of key 1 to 8
+        if (currentKey.length() == maxLength) { //generate all possible keys
 
-            // Try to decode the ciphertext with the current key
+            totalKeysTested++; // the count of tested keys
+
+            // try to decode the ciphertext with the current key
             String decryptedText = decrypt(ciphertext, currentKey);
 
-            // Count the number of valid words in the decoded text
+            // count the number of valid words in the decoded text
             int validWords = countValidWords(decryptedText, dictionary);
 
-            // Show the current key and its effect on the ciphertext
+            // print out the tries
             System.out.println("Testing Key: " + currentKey);
             System.out.println("Decrypted Text: \n" + decryptedText);
             System.out.println("Words found in dictionary: " + validWords + "\n");
 
-            // If the decoded text has enough valid words, assume the key is correct
+            // print out success
             if (validWords > 5) { // Change the threshold as needed
                 System.out.println("** Key Found: " + currentKey + " **");
                 System.out.println("Decrypted Text with Key: " + currentKey + ":\n" + decryptedText);
                 System.out.println("Words found in dictionary: " + validWords);
             }
-            return; // Exit this recursive path
+            return; // exit this
         }
 
-        // Recursive case: build the key by adding one more letter at a time
-        for (char c : ALPHABET) { // ALPHABET is assumed to be a predefined character array
+        //build the key by adding one more letter at a time
+        for (char c : ALPHABET) {
             bruteForce(currentKey + c, maxLength, ciphertext, dictionary);
         }
     }
-    //Thomas
+    //Thomas end
     //Aidan
 
     /**
